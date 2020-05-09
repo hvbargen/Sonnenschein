@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://images/sonne.png" type="Texture" id=1]
+[ext_resource path="res://BtnExit.gd" type="Script" id=2]
+[ext_resource path="res://BtnStart.gd" type="Script" id=3]
+[ext_resource path="res://fonts/Fredoka_One/Fredoka-80.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/Fredoka_One/test-theme.tres" type="Theme" id=5]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="InputEventKey" id=2]
+unicode = 13
+
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LblTitle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.172
+anchor_right = 0.5
+anchor_bottom = 0.172
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 0.811765, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.501961, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 4
+text = "Sonnenschein"
+align = 1
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnStart" type="Button" parent="."]
+anchor_left = 0.2
+anchor_top = 0.5
+anchor_right = 0.4
+anchor_bottom = 0.7
+focus_next = NodePath("../BtnExit")
+shortcut = SubResource( 3 )
+text = "Start"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnExit" type="Button" parent="."]
+anchor_left = 0.6
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.7
+focus_previous = NodePath("../BtnStart")
+shortcut = SubResource( 3 )
+text = "Ende"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sonne" type="Sprite" parent="."]
+position = Vector2( 264.868, 264.934 )
+z_index = -1
+texture = ExtResource( 1 )
+[connection signal="pressed" from="BtnStart" to="BtnStart" method="_on_BtnStart_pressed"]
+[connection signal="pressed" from="BtnExit" to="BtnExit" method="_on_BtnExit_pressed"]
