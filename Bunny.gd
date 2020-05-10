@@ -72,7 +72,7 @@ func _physics_process(delta):
 			pass #print("not on floor")
 	velocity = move_and_slide(velocity, UP_DIRECTION)
 	#print(velocity)
-	for i in range(get_slide_count()):
+	for _ in range(get_slide_count()):
 		pass 
 		# var coll_obj = get_slide_collision(i)
 		# print(coll_obj)
@@ -95,6 +95,4 @@ func set_score(new_score):
 	score = new_score
 	print("new score: ", score)
 	emit_signal("score_changed", score)
-
-
 
