@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://images/sonne.png" type="Texture" id=1]
 [ext_resource path="res://images/Berge.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Stage1.gd" type="Script" id=7]
 [ext_resource path="res://Orange Particle.gd" type="Script" id=8]
 [ext_resource path="res://fonts/Fredoka_One/Fredoka-40.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Terrain.tres" type="TileSet" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Lauf"
@@ -84,7 +85,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Himmel wolkenlos" type="Sprite" parent="."]
-position = Vector2( 0, -7.79495 )
+position = Vector2( 0, 1.43051e-06 )
 scale = Vector2( 0.514022, 0.514022 )
 z_index = -99
 texture = ExtResource( 3 )
@@ -125,6 +126,43 @@ margin_bottom = 164.522
 custom_fonts/font = ExtResource( 9 )
 text = "Score"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TerrainTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 2031641, 0, 1, 2031642, 0, 1, 2031643, 0, 1, 2031644, 0, 1, 2359296, 0, 1, 2359297, 0, 1, 2359298, 0, 1, 2359299, 0, 1, 2359300, 0, 1, 2359301, 0, 1, 2359302, 0, 1, 2359303, 0, 1, 2359304, 0, 1, 2359305, 0, 1, 2359306, 0, 1, 2359307, 0, 1, 2359308, 0, 1, 2359309, 0, 1, 2359310, 0, 1, 2359311, 0, 1, 2359312, 0, 1, 2359313, 0, 1, 2359314, 0, 1, 2359315, 0, 1, 2359316, 0, 1, 2359317, 0, 1, 2359318, 0, 1, 2359319, 0, 1, 2359320, 0, 1, 2359321, 0, 1, 2359322, 0, 1, 2359323, 0, 1, 2359324, 0, 1, 2359325, 0, 1, 2359326, 0, 1, 2359327, 0, 1, 2359328, 0, 1, 2359329, 0, 1, 2359330, 0, 1, 2359331, 0, 1, 2359332, 0, 1, 2359333, 0, 1, 2359334, 0, 1, 2359335, 0, 1, 2359336, 0, 1, 2359337, 0, 1, 2359338, 0, 1, 2359339, 0, 1, 2359340, 0, 1, 2359341, 0, 1, 2359342, 0, 1, 2359343, 0, 1, 2359344, 0, 1, 2359345, 0, 1, 2359346, 0, 1, 2359347, 0, 1, 2359348, 0, 1, 2359349, 0, 1, 2359350, 0, 1, 2359351, 0, 1, 2359352, 0, 1, 2359353, 0, 1, 2359354, 0, 1, 2359355, 0, 1 )
+
+[node name="TimeHBox" type="HBoxContainer" parent="."]
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 256.0
+margin_bottom = 165.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLabelSec" type="Label" parent="TimeHBox"]
+margin_right = 96.0
+margin_bottom = 101.0
+custom_fonts/font = ExtResource( 9 )
+text = "Secs.
+"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLabelFrac" type="Label" parent="TimeHBox"]
+margin_left = 100.0
+margin_right = 188.0
+margin_bottom = 101.0
+custom_fonts/font = ExtResource( 9 )
+text = "Frac
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
