@@ -11,10 +11,9 @@ func _on_Wurzel_ready():
 	
 func _process(delta):
 	time += delta
-	print("xx%4.1fxx" % time)
 	var textlist = ("%6.1f" % time).split(".")
 	var secs:String = textlist[0]
 	var fracs:String = textlist[1]
-	print(secs,".",fracs)
+	#print(secs,".",fracs)
 	$TimeHBox/TimeLabelSec.text = secs.strip_edges() + "."
 	$TimeHBox/TimeLabelFrac.text = fracs
